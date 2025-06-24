@@ -1,0 +1,446 @@
+# Updated AIXworkbench Homepage
+
+I've added the requested platform links with descriptions. Here's the updated code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIXworkbench - Artificial Intelligence Experience Workbench</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h3 {
+            margin-top: 0;
+        }
+        
+        .platform-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .platform-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .platform-card .btn {
+            margin-top: auto;
+            align-self: flex-start;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .social-icons a {
+            color: var(--primary-color);
+            font-size: 2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--primary-color);
+                padding: 1rem;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.4s ease-in-out;
+            }
+            
+            nav.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">AIX<span>workbench</span></div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#goals">Goals</a></li>
+                    <li><a href="#components">Components</a></li>
+                    <li><a href="#platforms">Platforms</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>AIXworkbench</h1>
+            <p>Artificial Intelligence Experience Workbench: A platform for exploring and learning about AI through practical experiences</p>
+            <a href="#about" class="btn">Learn More</a>
+        </section>
+        
+        <section id="about">
+            <h2>About AIXworkbench</h2>
+            <p>The Artificial Intelligence Experience Workbench (AIXworkbench) is a platform for exploring artificial intelligence through practical experiences. It provides a comprehensive learning environment for understanding AI concepts, techniques, and applications.</p>
+            <p>AIXworkbench aims to make AI accessible to everyone, from beginners to advanced practitioners, by offering hands-on learning opportunities and resources that bridge the gap between theory and practice.</p>
+        </section>
+        
+        <section id="goals">
+            <h2>Goals</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Education</h3>
+                    <p>Provide a comprehensive learning platform for AI concepts, techniques, and applications.</p>
+                </div>
+                <div class="card">
+                    <h3>Accessibility</h3>
+                    <p>Make AI learning accessible to diverse audiences regardless of technical background.</p>
+                </div>
+                <div class="card">
+                    <h3>Practical Experience</h3>
+                    <p>Offer hands-on experiences that bridge the gap between theory and practice.</p>
+                </div>
+                <div class="card">
+                    <h3>Community</h3>
+                    <p>Foster a collaborative community of AI learners, educators, and practitioners.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="platforms">
+            <h2>Our Platforms</h2>
+            <p>AIXworkbench is available across multiple platforms to support different aspects of your AI learning journey:</p>
+            
+            <div class="card-container">
+                <div class="card platform-card">
+                    <div class="icon"><i class="fab fa-discord"></i></div>
+                    <h3>Discord Community</h3>
+                    <p>Join our active Discord community to connect with fellow AI enthusiasts, ask questions, share your projects, and participate in live discussions and events. Our Discord server is the central hub for real-time interaction within the AIXworkbench community.</p>
+                    <a href="https://discord.gg/pxjheq4JaH" class="btn" target="_blank">Join Discord</a>
+                </div>
+                
+                <div class="card platform-card">
+                    <div class="icon"><i class="fas fa-book"></i></div>
+                    <h3>Zotero Library</h3>
+                    <p>Access our curated Zotero library containing research papers, articles, and resources related to AI. This collaborative bibliography helps you stay up-to-date with the latest developments in AI research and provides academic foundations for your learning.</p>
+                    <a href="https://www.zotero.org/groups/6012750/aix-workbench" class="btn" target="_blank">Browse Library</a>
+                </div>
+                
+                <div class="card platform-card">
+                    <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Wikiversity</h3>
+                    <p>Explore our structured learning materials on Wikiversity, where you'll find comprehensive tutorials, guides, and educational content. This is our main knowledge base for AI concepts, methodologies, and practical applications, organized in an accessible format.</p>
+                    <a href="https://en.wikiversity.org/wiki/AIXworkbench" class="btn" target="_blank">Learn on Wikiversity</a>
+                </div>
+                
+                <div class="card platform-card">
+                    <div class="icon"><i class="fab fa-youtube"></i></div>
+                    <h3>YouTube Channel</h3>
+                    <p>Watch video tutorials, lectures, and demonstrations on our YouTube channel. Visual learning resources cover everything from basic AI concepts to advanced techniques, with step-by-step guides and practical examples to enhance your understanding.</p>
+                    <a href="https://www.youtube.com/@aixsunypoly" class="btn" target="_blank">Watch Videos</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="components">
+            <h2>Components</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Learning Modules</h3>
+                    <p>Structured content covering fundamental AI concepts, algorithms, and applications.</p>
+                    <ul>
+                        <li>Introduction to AI</li>
+                        <li>Machine Learning Fundamentals</li>
+                        <li>Neural Networks</li>
+                        <li>Natural Language Processing</li>
+                        <li>Computer Vision</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Interactive Tutorials</h3>
+                    <p>Step-by-step guides with code examples and exercises to reinforce learning.</p>
+                </div>
+                <div class="card">
+                    <h3>Projects</h3>
+                    <p>Hands-on projects that apply AI techniques to real-world problems.</p>
+                </div>
+                <div class="card">
+                    <h3>Tools & Resources</h3>
+                    <p>Curated collection of AI tools, libraries, datasets, and references.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="resources">
+            <h2>Resources</h2>
+            <h3>Getting Started</h3>
+            <p>New to AI? Start here to build a solid foundation:</p>
+            <ul>
+                <li>Introduction to AI concepts and terminology</li>
+                <li>Setting up your development environment</li>
+                <li>Python basics for AI</li>
+                <li>First steps with machine learning</li>
+            </ul>
+            
+            <h3>Advanced Topics</h3>
+            <p>Deepen your knowledge with these advanced resources:</p>
+            <ul>
+                <li>Deep learning architectures</li>
+                <li>Reinforcement learning</li>
+                <li>Generative AI</li>
+                <li>AI ethics and responsible development</li>
+            </ul>
+            
+            <h3>External Resources</h3>
+            <p>Additional learning materials and tools:</p>
+            <ul>
+                <li>Open datasets for AI projects</li>
+                <li>Research papers and publications</li>
+                <li>AI communities and forums</li>
+                <li>Online courses and tutorials</li>
+            </ul
